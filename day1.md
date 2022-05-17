@@ -36,3 +36,7 @@ plt.show()
 plt.plot(bike_data['Distance'].groupby(bike_data['Date_out']).sum())
 plt.show()#시간에 따른 데이터의 변화를 선그래프로 표현함
 ```
+2. 탐색적 데이터에 빈번히 활용되는 함수
+- value_counts():특정 컬럼 내용을 구성하는 값과 각 값의 빈도
+- pivot_table: 데이터를 원하는 기준으로 요약 정리하는 방법
+- melt :요약된 테이블을 다시 전 테이블로 만듬
