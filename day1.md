@@ -20,3 +20,19 @@
     - outer:합집합 [pd.merge(df1,df2,how='outer',on='a')]
     - left [pd.merge(df1,df2,how='left',on='a')]
     - right [pd.merge(df1,df2,how='right',on='a')]
+
+---
+1. 데이터시각화
+- 분석결과를 효과적으로 전달함
+- 구체적인 분석에 앞서 데이터 전체에 대한 이해를 할 수 있다.
+```py
+import matplotlib.pyplot as plt
+#원그래프
+plt.pie(sizes,labels=labels,colors=colors,autopct='%1.1f%%',startangle=90)
+plt.hist(bike_data2.Distance,color='b',bins=1000)#히스토 그램
+plt.show()
+plt.boxplot(bike_data2.Distance)
+plt.show()
+plt.plot(bike_data['Distance'].groupby(bike_data['Date_out']).sum())
+plt.show()#시간에 따른 데이터의 변화를 선그래프로 표현함
+```
