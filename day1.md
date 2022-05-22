@@ -40,3 +40,25 @@ plt.show()#시간에 따른 데이터의 변화를 선그래프로 표현함
 - value_counts():특정 컬럼 내용을 구성하는 값과 각 값의 빈도
 - pivot_table: 데이터를 원하는 기준으로 요약 정리하는 방법
 - melt :요약된 테이블을 다시 전 테이블로 만듬
+
+3. 정규분포
+- 통계의 이론적 중심에 있는 분포이고 종모양의 비ㅐ칭의 형태로 자연 현상에서 종종발견됨
+- 중심극한 정리 : 어떤 모집단에서 표본을 취하고 평균을 구할때, 횟수가 충분히 크면 표본 평균은 정규 분포를 따름
+- 히스토그램:정규분포, 중심극한정리를 확인할 때 활용 할 수 있다.
+```py
+#정규분포이해하기
+import matplotlib.pyplot as plt
+import numpy as np
+random_sample=np.random.normal(loc =10 , scale =2 ,size=1000)
+plt.hist(random_sample,bins = 100)
+plt.show()#대략 분포의 모양을 알 수있다,
+```
+- 큐큐 플롯:이론적인 값과 실제 데이터 값을 비교하여 확인할 수 있다.
+```py
+import pylab
+import scipy.stats as stats
+norm_sample = np.random.normal(loc = 20 , scale =5, size = 100)#평균 20,표준편차5,데이터 100개
+stats.probplot(norm_sample,dist='norm',plot = pylab)
+#무작위로 만든 샘플데이터를 정규분포에 근사한 형태가 되도록 만듬
+pylab.show()#QQ플롯
+```
